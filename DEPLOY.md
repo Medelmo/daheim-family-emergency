@@ -1,16 +1,12 @@
-# Deployment and installation
+# Publish the app for installation
 
-Daheim is a static Progressive Web App. It requires HTTPS in production (GitHub Pages provides HTTPS).
+A PWA cannot be installed from a downloaded `file://` HTML file. It must be served from HTTPS (or localhost during development).
 
-## GitHub Pages
-1. Open repository Settings → Pages.
-2. Under Build and deployment, select Deploy from a branch.
-3. Select `main` and `/(root)`, then Save.
-4. Wait for the deployment to finish. The site URL will be `https://medelmo.github.io/daheim-family-emergency/`.
-5. Open that URL in Chrome on Android and choose Install app or Add to Home screen.
+## GitHub Pages (free)
+1. Create a new GitHub repository. Choose public only if you are comfortable publishing the app's source code; the app does not contain your family data.
+2. Upload the *contents* of this folder to the repository root.
+3. In **Settings → Pages**, choose **Deploy from a branch**, select `main` and `/ (root)`, then save.
+4. Wait for the Pages deployment and open the HTTPS URL on your Android phone.
+5. In Chrome, use **Install app** / **Add to Home screen**. On supported browsers the app opens in its own window.
 
-## Privacy
-The source code is public. The household inventory and checklist are stored locally in the browser using IndexedDB. Do not commit JSON backup files. Export backups and keep them somewhere private.
-
-## Moving to a NAS
-Copy the complete static site to a web server on the NAS and serve it over HTTPS. Keep the same origin if you want the browser's existing IndexedDB data to remain available; changing domains/origins does not automatically move local data. Export a JSON backup before migrating and import it on the new origin.
+If you prefer not to publish the source publicly, use a private repository with a hosting service/plan that supports private deployments, or a static hosting provider with a free private-project option. Do not upload a backup JSON file to the repository.
