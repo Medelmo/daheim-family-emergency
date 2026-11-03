@@ -1,0 +1,5 @@
+# Never commit household backups or local development data
+*.json.backup
+*-backup-*.json
+.DS_Store
+Thumbs.db
